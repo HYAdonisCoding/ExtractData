@@ -1,7 +1,7 @@
 import os
 import extract
 # 提取1,2,4,5,11,12,18，23，26列数据
-path = "202110"  # 数据来源
+path = "txt"  # 数据来源
 dirs = os.listdir(path)
 
 # for file in dirs:
@@ -10,7 +10,7 @@ dirsList = []
 for root, dirs, files in os.walk(path):
     for name in files:
         if name.endswith("_H"):
-        # if name.endswith(".txt") == False:
+            # if name.endswith(".txt") == False:
             print(os.path.join(root, name))
             # 调用方法
             # extract.extract(os.path.join(root, name))
@@ -33,13 +33,10 @@ for file in dirsList:
         d = os.path.join(file, subfile)
         # print(d)
         fileList.append(d)
-    
+
     fileList = sorted(fileList)
     print(file, "----------------------")
     print(fileList)
     for t in fileList:
         # 调用方法
         extract.extract(t)
-
-
-
